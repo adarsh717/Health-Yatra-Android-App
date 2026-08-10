@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Theme.HealthYatra" parent="Theme.Material3.Dark.NoActionBar">
+
+        <item name="colorPrimary">@color/primary_light</item>
+        <item name="colorPrimaryContainer">@color/primary_dark</item>
+
+        <item name="android:colorBackground">#0F172A</item>
+        <item name="colorSurface">#1E293B</item>
+
+        <item name="android:textColorPrimary">@color/white</item>
+        <item name="android:textColorSecondary">#94A3B8</item>
+
+        <item name="android:statusBarColor">@color/primary_dark</item>
+        <item name="android:navigationBarColor">#0F172A</item>
+
+        <item name="android:windowLightStatusBar">false</item>
+
+    </style>
+
+</resources>

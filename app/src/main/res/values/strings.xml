@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Health-Yatra</string>
+    <string name="loading">Loading....</string>
+    <string name="health_yatra_logo">Health-Yatra Logo</string>
+    <string name="health_yatra">Health-Yatra</string>
+    <string name="your_health_our_priority">Your health, our priority</string>
+    <string name="LogoImage">logoImage</string>
+    <string name="welcome_to_health_yatra">Welcome to Health-Yatra</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="enter_your_email">Enter Your Name/Email</string>
+    <string name="enter_username">Enter UserName</string>
+    <string name="enter_password">Enter Password</string>
+    <string name="enter_phone_number">Enter Phone Number</string>
+    <string name="enter_aadhaar_number">Enter Aadhaar Number</string>
+</resources>

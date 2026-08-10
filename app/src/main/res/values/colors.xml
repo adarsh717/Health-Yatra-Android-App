@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Primary -->
+    <color name="primary">#0F766E</color>
+    <color name="primary_light">#14B8A6</color>
+    <color name="primary_dark">#115E59</color>
+
+    <!-- Background & Surface -->
+    <color name="background">#F8FAFC</color>
+    <color name="white">#FFFFFF</color>
+
+    <!-- Text -->
+    <color name="text_primary">#1E293B</color>
+    <color name="text_secondary">#64748B</color>
+
+    <!-- Status -->
+    <color name="success">#22C55E</color>
+    <color name="error">#EF4444</color>
+
+</resources>
