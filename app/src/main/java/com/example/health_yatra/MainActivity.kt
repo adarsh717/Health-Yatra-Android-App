@@ -1,5 +1,6 @@
 package com.example.health_yatra
 
+import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
@@ -9,13 +10,16 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
 class MainActivity : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
         Handler(Looper.getMainLooper()).postDelayed({
+            startActivity(Intent(this, Home::class.java))
+            finish()
+        }, 1000)
 
-            setContentView(R.layout.activity_main)
 
-        }, 2000)
     }
 }

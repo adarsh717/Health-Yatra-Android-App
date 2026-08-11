@@ -9,8 +9,15 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="enter_your_email">Enter Your Name/Email</string>
-    <string name="enter_username">Enter UserName</string>
+    <string name="enter_username">Enter Username</string>
     <string name="enter_password">Enter Password</string>
     <string name="enter_phone_number">Enter Phone Number</string>
     <string name="enter_aadhaar_number">Enter Aadhaar Number</string>
+    <string name="role">Role</string>
+    <string name="register">Register</string>
+    <string name="login">Login</string>
+    <string name="don_t_have_an_account">Don\'t have an account?</string>
+    <string name="remember_me">Remember me</string>
+    <string name="forget_password">Forget Password</string>
+    <string name="already_registered">Already registered?</string>
 </resources>
