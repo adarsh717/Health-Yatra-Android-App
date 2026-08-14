@@ -2,16 +2,16 @@
 <resources>
 
     <!-- Primary -->
-    <color name="primary">#0F766E</color>
-    <color name="primary_light">#14B8A6</color>
-    <color name="primary_dark">#115E59</color>
+    <color name="primary">#FFFFFF</color>
+    <color name="primary_light">#CACACA</color>
+    <color name="primary_dark">#9D9D9D</color>
 
     <!-- Background & Surface -->
     <color name="background">#F8FAFC</color>
     <color name="white">#FFFFFF</color>
 
     <!-- Text -->
-    <color name="text_primary">#1E293B</color>
+    <color name="text_primary">#000000</color>
     <color name="text_secondary">#64748B</color>
 
     <!-- Status -->

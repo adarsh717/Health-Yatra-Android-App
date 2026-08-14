@@ -3,26 +3,23 @@
 
     <style name="Theme.HealthYatra" parent="Theme.Material3.Light.NoActionBar">
 
-        <!-- Primary -->
         <item name="colorPrimary">@color/primary</item>
         <item name="colorPrimaryContainer">@color/primary_light</item>
 
-        <!-- Background -->
         <item name="android:colorBackground">@color/background</item>
         <item name="colorSurface">@color/white</item>
 
-        <!-- Text -->
         <item name="android:textColorPrimary">@color/text_primary</item>
         <item name="android:textColorSecondary">@color/text_secondary</item>
 
         <!-- Status Bar -->
-        <item name="android:statusBarColor">@color/primary_dark</item>
+        <item name="android:statusBarColor">@color/text_primary</item>
+        <item name="android:windowLightStatusBar">true</item>
 
         <!-- Navigation Bar -->
         <item name="android:navigationBarColor">@color/white</item>
 
-        <!-- Light status bar icons -->
-        <item name="android:windowLightStatusBar">false</item>
+        <item name="colorControlActivated">#1565C0</item>
 
     </style>
 

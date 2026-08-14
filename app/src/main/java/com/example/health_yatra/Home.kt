@@ -2,6 +2,8 @@ package com.example.health_yatra
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.WindowCompat
+import androidx.core.view.WindowInsetsControllerCompat
 import com.example.health_yatra.fragment.Login
 import com.example.health_yatra.fragment.SignUp
 import com.google.android.material.appbar.MaterialToolbar
@@ -10,6 +12,12 @@ class Home : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        WindowCompat.setDecorFitsSystemWindows(window, true)
+
+        WindowInsetsControllerCompat(window, window.decorView).apply {
+            isAppearanceLightStatusBars = true
+        }
 
         setContentView(R.layout.activity_home)
 
@@ -25,7 +33,6 @@ class Home : AppCompatActivity() {
                     R.id.authFragmentContainer,
                     SignUp()
                 )
-                .addToBackStack(null)
                 .commit()
         }
 

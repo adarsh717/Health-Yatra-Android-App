@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="150dp"
+    android:height="150dp"
+    android:viewportWidth="150"
+    android:viewportHeight="150">
+
+    <!-- Medical Cross -->
+    <path
+        android:fillColor="#26B6A5"
+        android:pathData="
+            M43,20
+            C43,15 47,11 52,11
+            L65,11
+            C70,11 74,15 74,20
+            L74,38
+            L92,38
+            C97,38 101,42 101,47
+            L101,60
+            C101,65 97,69 92,69
+            L74,69
+            L74,87
+            C74,92 70,96 65,96
+            L52,96
+            C47,96 43,92 43,87
+            L43,69
+            L25,69
+            C20,69 16,65 16,60
+            L16,47
+            C16,42 20,38 25,38
+            L43,38 Z"/>
+
+    <!-- Heart -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:strokeColor="#087FA6"
+        android:strokeWidth="5"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:pathData="
+            M72,118
+            C68,114 35,91 35,62
+            C35,48 45,40 57,40
+            C64,40 70,44 75,51
+            C80,44 86,40 94,40
+            C106,40 115,49 115,62
+            C115,91 82,114 72,118 Z"/>
+
+    <!-- ECG -->
+    <path
+        android:fillColor="@android:color/transparent"
+        android:strokeColor="#087FA6"
+        android:strokeWidth="4"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:pathData="
+            M48,70
+            L59,70
+            L64,61
+            L69,78
+            L75,51
+            L82,70
+            L91,70
+            L98,64"/>
+
+</vector>

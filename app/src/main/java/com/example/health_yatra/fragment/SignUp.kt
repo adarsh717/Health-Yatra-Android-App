@@ -1,13 +1,5 @@
 package com.example.health_yatra.fragment
-
-import android.content.Intent
-import android.graphics.Color
-import android.graphics.Typeface
 import android.os.Bundle
-import android.text.Spannable
-import android.text.SpannableString
-import android.text.style.ForegroundColorSpan
-import android.text.style.StyleSpan
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -15,10 +7,8 @@ import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.widget.Toolbar
 import com.example.health_yatra.R
 import com.google.android.material.textfield.MaterialAutoCompleteTextView
-import kotlin.jvm.java
 
 class SignUp : Fragment() {
 
@@ -35,6 +25,7 @@ class SignUp : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val roles = arrayOf(
+            "Select Role",
             "Patient",
             "Doctor"
         )
@@ -48,24 +39,26 @@ class SignUp : Fragment() {
         val role = view.findViewById<MaterialAutoCompleteTextView>(R.id.role)
         role.setAdapter(adapter)
 
-
-
 val tvlogin = view.findViewById<TextView>(R.id.tvLogin)
 
         tvlogin.setOnClickListener {
+
+//          clear previous stack record
+            parentFragmentManager.popBackStack(
+                null,
+                androidx.fragment.app.FragmentManager.POP_BACK_STACK_INCLUSIVE
+            )
 
             parentFragmentManager.beginTransaction()
                 .replace(
                     R.id.authFragmentContainer,
                     Login()
                 )
-                .addToBackStack(null)
+                .addToBackStack("Login")
                 .commit()
 
             (requireActivity() as AppCompatActivity)
                 .supportActionBar?.title = "Login"
         }
-
     }
-
-    }
+}

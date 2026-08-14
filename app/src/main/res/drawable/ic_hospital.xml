@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="360dp"
+    android:height="230dp"
+    android:viewportWidth="360"
+    android:viewportHeight="230">
+
+    <!-- Background hills -->
+    <path
+        android:fillColor="#E7F7F5"
+        android:pathData="
+            M0,130
+            C50,95 90,100 135,130
+            C185,165 225,150 270,120
+            C310,95 335,105 360,120
+            L360,230
+            L0,230 Z"/>
+
+    <!-- Second hill -->
+    <path
+        android:fillColor="#CDEEEA"
+        android:pathData="
+            M0,160
+            C45,130 80,140 120,160
+            C165,182 210,180 250,150
+            C295,120 325,135 360,155
+            L360,230
+            L0,230 Z"/>
+
+    <!-- Hospital building -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="
+            M95,105
+            L265,105
+            L265,215
+            L95,215 Z"/>
+
+    <!-- Hospital roof -->
+    <path
+        android:fillColor="#24B7A6"
+        android:pathData="
+            M85,105
+            L275,105
+            L260,91
+            L100,91 Z"/>
+
+    <!-- Central hospital tower -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="
+            M135,65
+            L225,65
+            L225,215
+            L135,215 Z"/>
+
+    <!-- Tower roof -->
+    <path
+        android:fillColor="#24B7A6"
+        android:pathData="
+            M125,65
+            L235,65
+            L225,55
+            L135,55 Z"/>
+
+    <!-- Medical Cross -->
+    <path
+        android:fillColor="#24B7A6"
+        android:pathData="
+            M169,35
+            L191,35
+            L191,48
+            L204,48
+            L204,70
+            L191,70
+            L191,83
+            L169,83
+            L169,70
+            L156,70
+            L156,48
+            L169,48 Z"/>
+
+    <!-- Windows -->
+    <path
+        android:fillColor="#9BDCD5"
+        android:pathData="
+            M108,120 L130,120 L130,145 L108,145 Z
+            M230,120 L252,120 L252,145 L230,145 Z
+            M108,158 L130,158 L130,183 L108,183 Z
+            M230,158 L252,158 L252,183 L230,183 Z"/>
+
+    <!-- Tower windows -->
+    <path
+        android:fillColor="#9BDCD5"
+        android:pathData="
+            M148,95 L165,95 L165,117 L148,117 Z
+            M195,95 L212,95 L212,117 L195,117 Z
+            M148,128 L165,128 L165,150 L148,150 Z
+            M195,128 L212,128 L212,150 L195,150 Z
+            M148,161 L165,161 L165,183 L148,183 Z
+            M195,161 L212,161 L212,183 L195,183 Z"/>
+
+    <!-- Entrance -->
+    <path
+        android:fillColor="#24B7A6"
+        android:pathData="
+            M162,183
+            L198,183
+            L198,215
+            L162,215 Z"/>
+
+    <!-- Trees -->
+    <path
+        android:fillColor="#25B49E"
+        android:pathData="
+            M35,202
+            C25,190 28,173 40,164
+            C52,174 54,190 45,202 Z
+            M315,202
+            C305,190 308,173 320,164
+            C332,174 334,190 325,202 Z"/>
+
+    <!-- Tree trunks -->
+    <path
+        android:fillColor="#78B99F"
+        android:pathData="
+            M39,197 L43,197 L43,220 L39,220 Z
+            M319,197 L323,197 L323,220 L319,220 Z"/>
+
+</vector>
