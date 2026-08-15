@@ -20,4 +20,9 @@
     <string name="remember_me">Remember me</string>
     <string name="forget_password">Forget Password</string>
     <string name="already_registered">Already registered?</string>
+    <string name="help">Help</string>
+    <string name="plus">+</string>
+    <string name="healthcare_logo">HealthCare Logo</string>
+    <string name="hospital">Hospital</string>
+    <string name="better_care_better_life">Better Care, Better Life</string>
 </resources>

@@ -21,6 +21,9 @@
 
         <item name="colorControlActivated">#1565C0</item>
 
+        <item name="colorOnSurface">#1F2937</item>
+        <item name="colorOnSurfaceVariant">#64748B</item>
+
     </style>
 
 </resources>

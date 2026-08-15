@@ -3,6 +3,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#F7FBFC">
@@ -12,12 +13,6 @@
         android:id="@+id/splashCard"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginStart="18dp"
-        android:layout_marginEnd="18dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="20dp"
-        app:cardCornerRadius="36dp"
-        app:cardElevation="10dp"
         app:cardBackgroundColor="#FFFFFF"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -33,8 +28,8 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="+"
-                android:textSize="75sp"
+                android:text="@string/plus"
+                android:textSize="100sp"
                 android:textStyle="bold"
                 android:textColor="#D3EFED"
                 android:alpha="0.8"
@@ -43,10 +38,6 @@
                 android:layout_marginStart="55dp"
                 android:layout_marginTop="90dp"/>
 
-
-            <!-- Medical Logo -->
-
-
             <!-- App Name -->
 
             <TextView
@@ -54,7 +45,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="104dp"
                 android:layout_marginEnd="56dp"
-                android:text="+"
+                android:text="@string/plus"
                 android:textColor="#D3EFED"
                 android:textSize="115sp"
                 android:textStyle="bold"
@@ -65,8 +56,8 @@
                 android:id="@+id/ivLogo"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
-                android:layout_marginTop="32dp"
-                android:contentDescription="HealthCare Logo"
+                android:layout_marginTop="40dp"
+                android:contentDescription="@string/healthcare_logo"
                 android:src="@drawable/ic_health_logo"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -76,13 +67,12 @@
                 android:id="@+id/tvAppName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Health-Yatra"
-                android:textSize="20sp"
+                android:text="@string/health_yatra"
+                android:textSize="25sp"
                 android:textStyle="bold"
                 app:layout_constraintTop_toBottomOf="@id/ivLogo"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                android:layout_marginTop="5dp"/>
+                app:layout_constraintEnd_toEndOf="parent"/>
 
 
             <!-- Tagline -->
@@ -90,7 +80,7 @@
                 android:id="@+id/tvTagline"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Your Health, Our Priority"
+                android:text="@string/your_health_our_priority"
                 android:textSize="17sp"
                 android:textColor="#7C8992"
                 app:layout_constraintTop_toBottomOf="@id/tvAppName"
@@ -105,8 +95,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="230dp"
                 android:src="@drawable/ic_hospital"
-                android:scaleType="fitCenter"
-                android:contentDescription="Hospital"
+                android:scaleType="fitXY"
+                android:contentDescription="@string/hospital"
                 app:layout_constraintBottom_toTopOf="@id/bottomSection"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"/>
@@ -124,51 +114,44 @@
 
 
             <!-- Bottom Text -->
-            <TextView
-                android:id="@+id/tvBetterCare"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Better Care, Better Life"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                android:textColor="#183F53"
-                app:layout_constraintTop_toTopOf="@id/bottomSection"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                android:layout_marginTop="72dp"/>
 
 
             <!-- Progress Background -->
-            <View
-                android:id="@+id/progressBg"
-                android:layout_width="210dp"
-                android:layout_height="8dp"
-                android:background="@drawable/bg_progress"
-                app:layout_constraintTop_toBottomOf="@id/tvBetterCare"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                android:layout_marginTop="35dp"/>
-
-
-            <!-- Progress -->
-            <View
-                android:id="@+id/progress"
-                android:layout_width="90dp"
-                android:layout_height="8dp"
-                android:background="@drawable/bg_progress_active"
-                app:layout_constraintStart_toStartOf="@id/progressBg"
-                app:layout_constraintTop_toTopOf="@id/progressBg"/>
 
 
             <!-- Loading -->
             <TextView
+                android:id="@+id/tvBetterCare"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:text="@string/better_care_better_life"
+                android:textColor="#183F53"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.497"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/bottomSection" />
+
+            <ProgressBar
+                android:id="@+id/progressbar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:outlineSpotShadowColor="@color/text_primary"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvBetterCare" />
+
+            <TextView
                 android:id="@+id/tvLoading"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Loading..."
+                android:text="@string/loading"
                 android:textSize="16sp"
                 android:textColor="#84939B"
-                app:layout_constraintTop_toBottomOf="@id/progressBg"
+                app:layout_constraintTop_toBottomOf="@id/progressbar"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 android:layout_marginTop="18dp"/>

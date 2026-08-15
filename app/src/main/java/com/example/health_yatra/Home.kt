@@ -21,8 +21,8 @@ class Home : AppCompatActivity() {
 
         setContentView(R.layout.activity_home)
 
-        val toolbar = findViewById<MaterialToolbar>(R.id.toolbar)
-        setSupportActionBar(toolbar)
+//        val toolbar = findViewById<MaterialToolbar>(R.id.topBar)
+//        setSupportActionBar(toolbar)
 
         supportActionBar?.title = "Sign Up"
 

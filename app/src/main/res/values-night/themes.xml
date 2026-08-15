@@ -9,10 +9,14 @@
         <item name="android:colorBackground">#0F172A</item>
         <item name="colorSurface">#1E293B</item>
 
-        <item name="android:textColorPrimary">@color/white</item>
+        <!-- Important for dropdown/text -->
+        <item name="colorOnSurface">@color/text_primary</item>
+        <item name="colorOnSurfaceVariant">#CBD5E1</item>
+
+        <item name="android:textColorPrimary">@color/primary</item>
         <item name="android:textColorSecondary">#94A3B8</item>
 
-        <item name="android:statusBarColor">@color/primary_dark</item>
+        <item name="android:statusBarColor">@color/text_primary</item>
         <item name="android:navigationBarColor">#0F172A</item>
 
         <item name="android:windowLightStatusBar">false</item>

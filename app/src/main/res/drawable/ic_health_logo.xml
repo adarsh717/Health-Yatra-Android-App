@@ -10,7 +10,7 @@
         android:fillColor="#26B6A5"
         android:pathData="
             M43,20
-            C43,15 47,11 52,11
+            C43,15 47,11 52,12
             L65,11
             C70,11 74,15 74,20
             L74,38
