@@ -25,7 +25,7 @@ class SignUp : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val roles = arrayOf(
-            "Select Role",
+
             "Patient",
             "Doctor"
         )
