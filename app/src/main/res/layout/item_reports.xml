@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="10dp"
+    app:cardCornerRadius="16dp"
+    app:cardElevation="2dp"
+    app:cardBackgroundColor="#FFFFFF">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:padding="16dp">
+
+        <!-- Icon -->
+        <TextView
+            android:id="@+id/tvReportIcon"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:text="🧪"
+            android:textSize="24sp"/>
+
+        <!-- Report Information -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginStart="12dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvReportName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Complete Blood Count (CBC)"
+                android:textColor="#102A43"
+                android:textSize="16sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/tvReportType"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="Blood Test"
+                android:textColor="#627D98"
+                android:textSize="13sp"/>
+
+            <TextView
+                android:id="@+id/tvReportDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="20 Aug 2026"
+                android:textColor="#829AB1"
+                android:textSize="12sp"/>
+
+        </LinearLayout>
+
+        <!-- View -->
+        <TextView
+            android:id="@+id/tvViewReport"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="View →"
+            android:textColor="#087F5B"
+            android:textSize="14sp"
+            android:textStyle="bold"/>
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>
