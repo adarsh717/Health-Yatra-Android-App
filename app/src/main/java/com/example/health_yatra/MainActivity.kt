@@ -22,14 +22,12 @@ class MainActivity : AppCompatActivity() {
             isAppearanceLightStatusBars = true
         }
 
-
         setContentView(R.layout.activity_main)
 
         Handler(Looper.getMainLooper()).postDelayed({
             startActivity(Intent(this, Home::class.java))
             finish()
-        }, 1500)
-
+        }, 1000)
 
     }
 }

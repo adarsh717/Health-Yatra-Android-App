@@ -1,10 +1,13 @@
 package com.example.health_yatra.fragment
+
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
+import android.widget.Button
+import android.widget.FrameLayout
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.example.health_yatra.R
@@ -13,6 +16,7 @@ import com.google.android.material.textfield.MaterialAutoCompleteTextView
 class SignUp : Fragment() {
 
     override fun onCreateView(
+
             inflater: LayoutInflater, container: ViewGroup?,
             savedInstanceState: Bundle?,
         ): View? {
@@ -39,9 +43,11 @@ class SignUp : Fragment() {
         val role = view.findViewById<MaterialAutoCompleteTextView>(R.id.role)
         role.setAdapter(adapter)
 
-val tvlogin = view.findViewById<TextView>(R.id.tvLogin)
+        val tvLogin = view.findViewById<TextView>(R.id.tvLogin)
+        val verifyBtn = view.findViewById<Button>(R.id.btnVerifyEmail)
+        val otpFrame = view.findViewById<FrameLayout>(R.id.otpFrame)
 
-        tvlogin.setOnClickListener {
+        tvLogin.setOnClickListener {
 
 //          clear previous stack record
             parentFragmentManager.popBackStack(
@@ -60,5 +66,10 @@ val tvlogin = view.findViewById<TextView>(R.id.tvLogin)
             (requireActivity() as AppCompatActivity)
                 .supportActionBar?.title = "Login"
         }
+
+        verifyBtn.setOnClickListener {
+            otpFrame.visibility = View.VISIBLE
+        }
+
     }
 }

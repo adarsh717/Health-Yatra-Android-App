@@ -68,7 +68,7 @@
             android:id="@+id/tvViewReport"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="View →"
+            android:text="View "
             android:textColor="#087F5B"
             android:textSize="14sp"
             android:textStyle="bold"/>

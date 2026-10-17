@@ -6,7 +6,6 @@ import androidx.core.view.WindowCompat
 import androidx.core.view.WindowInsetsControllerCompat
 import com.example.health_yatra.fragment.Login
 import com.example.health_yatra.fragment.SignUp
-import com.google.android.material.appbar.MaterialToolbar
 
 class Home : AppCompatActivity() {
 

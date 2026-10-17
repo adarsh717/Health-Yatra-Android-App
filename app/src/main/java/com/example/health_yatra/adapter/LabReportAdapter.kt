@@ -7,9 +7,9 @@ import android.widget.TextView
 import com.example.health_yatra.R
 import androidx.recyclerview.widget.RecyclerView
 import com.example.health_yatra.LabReport
-
-
-class LabReportAdapter(private val reports: List<LabReport>): RecyclerView.Adapter<LabReportAdapter.LabReportsViewHolder>() {
+class LabReportAdapter(
+    private val reports: List<LabReport>
+): RecyclerView.Adapter<LabReportAdapter.LabReportsViewHolder>() {
 
     class LabReportsViewHolder(itemView : View): RecyclerView.ViewHolder(itemView){
 

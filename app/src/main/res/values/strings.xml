@@ -8,7 +8,7 @@
     <string name="welcome_to_health_yatra">Welcome to Health-Yatra</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="enter_your_email">Enter Your Name/Email</string>
+    <string name="enter_your_email">Enter Email</string>
     <string name="enter_username">Enter Username</string>
     <string name="enter_password">Enter Password</string>
     <string name="enter_phone_number">Enter Phone Number</string>
@@ -25,4 +25,7 @@
     <string name="healthcare_logo">HealthCare Logo</string>
     <string name="hospital">Hospital</string>
     <string name="better_care_better_life">Better Care, Better Life</string>
+    <string name="verify">Verify</string>
+    <string name="otp">OTP</string>
+    <string name="validate">Validate</string>
 </resources>
