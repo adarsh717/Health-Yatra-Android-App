@@ -12,6 +12,8 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.example.health_yatra.R
 import com.google.android.material.textfield.MaterialAutoCompleteTextView
+import android.widget.ScrollView
+
 
 class SignUp : Fragment() {
 
@@ -58,7 +60,7 @@ class SignUp : Fragment() {
             parentFragmentManager.beginTransaction()
                 .replace(
                     R.id.authFragmentContainer,
-                    Login()
+                    PatientRecord()
                 )
                 .addToBackStack("Login")
                 .commit()

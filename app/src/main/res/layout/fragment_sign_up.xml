@@ -2,12 +2,16 @@
 
 <ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/signupScrollView"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/primary"
     android:fillViewport="true"
+    android:scrollbars="vertical"
+    android:fadeScrollbars="false"
+    android:overScrollMode="always"
     android:clipToPadding="false"
     tools:context=".fragment.SignUp">
 
@@ -16,8 +20,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingStart="16dp"
-        android:paddingEnd="16dp"
         android:paddingTop="8dp"
+        android:paddingEnd="16dp"
         android:paddingBottom="32dp">
 
         <!-- Email -->
@@ -54,7 +58,7 @@
 
         </FrameLayout>
 
-        <!-- OTP: initially hidden -->
+        <!-- OTP -->
         <FrameLayout
             android:id="@+id/otpFrame"
             android:layout_width="0dp"
@@ -198,6 +202,7 @@
             android:id="@+id/loginPrompt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
             android:orientation="horizontal"
             app:layout_constraintTop_toBottomOf="@id/registerBtn"
             app:layout_constraintStart_toStartOf="parent"

@@ -18,6 +18,7 @@ class Home : AppCompatActivity() {
             isAppearanceLightStatusBars = true
         }
 
+
         setContentView(R.layout.activity_home)
 
 //        val toolbar = findViewById<MaterialToolbar>(R.id.topBar)

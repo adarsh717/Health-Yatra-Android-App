@@ -7,8 +7,6 @@
     android:layout_height="match_parent"
     android:background="#F7FBFC">
 
-
-
     <!-- Greeting -->
     <LinearLayout
         android:id="@+id/greetingLayout"
@@ -19,10 +17,9 @@
         android:paddingTop="12dp"
         android:paddingEnd="20dp"
         android:paddingBottom="20dp"
-
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintEnd_toEndOf="parent">
 
         <TextView
             android:layout_width="wrap_content"
@@ -41,7 +38,6 @@
             android:textSize="15sp" />
     </LinearLayout>
 
-
     <!-- Aadhaar Card -->
     <androidx.cardview.widget.CardView
         android:id="@+id/aadhaarCard"
@@ -49,9 +45,9 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
-        app:cardCornerRadius="25dp"
-        app:cardElevation="25dp"
         app:cardBackgroundColor="#FFFFFF"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="4dp"
         app:layout_constraintTop_toBottomOf="@id/greetingLayout"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
@@ -60,7 +56,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="18dp">
+            android:padding="16dp">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -68,7 +64,7 @@
                 android:text="Aadhaar Linked"
                 android:textColor="#102A43"
                 android:textSize="17sp"
-                android:textStyle="bold"/>
+                android:textStyle="bold" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -83,7 +79,7 @@
                     android:layout_weight="1"
                     android:text="XXXX XXXX 1234"
                     android:textColor="#627D98"
-                    android:textSize="15sp"/>
+                    android:textSize="15sp" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -96,21 +92,18 @@
                     android:text="✓ Verified"
                     android:textColor="#087F5B"
                     android:textSize="13sp"
-                    android:textStyle="bold"/>
+                    android:textStyle="bold" />
             </LinearLayout>
-
         </LinearLayout>
-
     </androidx.cardview.widget.CardView>
 
-
-    <!-- My Health Records Heading -->
+    <!-- Records Heading -->
     <TextView
         android:id="@+id/recordsTitle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="34dp"
+        android:layout_marginTop="24dp"
         android:layout_marginEnd="20dp"
         android:text="My Health Records"
         android:textColor="#102A43"
@@ -118,8 +111,7 @@
         android:textStyle="bold"
         app:layout_constraintTop_toBottomOf="@id/aadhaarCard"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
-
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <TextView
         android:id="@+id/recordsSubtitle"
@@ -133,19 +125,19 @@
         android:textSize="14sp"
         app:layout_constraintTop_toBottomOf="@id/recordsTitle"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintEnd_toEndOf="parent" />
 
-
-    <!-- Records Container -->
+    <!-- Records Card -->
     <androidx.cardview.widget.CardView
         android:id="@+id/recordsCard"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_margin="20dp"
-        app:cardCornerRadius="25dp"
-        app:cardElevation="25dp"
-        android:padding="12dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="20dp"
         app:cardBackgroundColor="#FFFFFF"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="4dp"
         app:layout_constraintTop_toBottomOf="@id/recordsSubtitle"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
@@ -160,199 +152,201 @@
             <LinearLayout
                 android:id="@+id/labReports"
                 android:layout_width="match_parent"
-                android:layout_height="70dp"
+                android:layout_height="wrap_content"
+                android:minHeight="70dp"
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
-                android:padding="12dp">
+                android:padding="10dp">
 
                 <TextView
-                    android:layout_width="48dp"
+                    android:layout_width="40dp"
                     android:layout_height="48dp"
                     android:gravity="center"
                     android:text="🧪"
-                    android:textSize="24sp"/>
+                    android:textSize="24sp" />
 
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
                     android:layout_weight="1"
-                    android:layout_marginStart="12dp"
                     android:orientation="vertical">
 
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Lab Reports"
                         android:textColor="#102A43"
                         android:textSize="16sp"
-                        android:textStyle="bold"/>
+                        android:textStyle="bold" />
 
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Blood tests, urine tests and more"
                         android:textColor="#627D98"
-                        android:textSize="13sp"/>
+                        android:textSize="13sp" />
                 </LinearLayout>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:paddingStart="8dp"
                     android:text="›"
                     android:textColor="#087F5B"
-                    android:textSize="28sp"/>
-
+                    android:textSize="28sp" />
             </LinearLayout>
 
-
-            <!-- Prescription -->
+            <!-- Prescriptions -->
             <LinearLayout
                 android:id="@+id/prescription"
                 android:layout_width="match_parent"
-                android:layout_height="70dp"
+                android:layout_height="wrap_content"
+                android:minHeight="70dp"
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
-                android:padding="12dp">
+                android:padding="10dp">
 
                 <TextView
-                    android:layout_width="48dp"
+                    android:layout_width="40dp"
                     android:layout_height="48dp"
                     android:gravity="center"
                     android:text="📋"
-                    android:textSize="24sp"/>
+                    android:textSize="24sp" />
 
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
                     android:layout_weight="1"
-                    android:layout_marginStart="12dp"
                     android:orientation="vertical">
 
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Prescriptions"
                         android:textColor="#102A43"
                         android:textSize="16sp"
-                        android:textStyle="bold"/>
+                        android:textStyle="bold" />
 
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Doctor prescriptions and medicines"
                         android:textColor="#627D98"
-                        android:textSize="13sp"/>
+                        android:textSize="13sp"
+                        android:maxLines="2"
+                        android:ellipsize="none" />
                 </LinearLayout>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:paddingStart="8dp"
                     android:text="›"
                     android:textColor="#087F5B"
-                    android:textSize="28sp"/>
-
+                    android:textSize="28sp" />
             </LinearLayout>
-
 
             <!-- Imaging Reports -->
             <LinearLayout
                 android:id="@+id/imagingReports"
                 android:layout_width="match_parent"
-                android:layout_height="70dp"
+                android:layout_height="wrap_content"
+                android:minHeight="70dp"
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
-                android:padding="12dp">
+                android:padding="10dp">
 
                 <TextView
-                    android:layout_width="48dp"
+                    android:layout_width="40dp"
                     android:layout_height="48dp"
                     android:gravity="center"
                     android:text="🩻"
-                    android:textSize="24sp"/>
+                    android:textSize="24sp" />
 
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
                     android:layout_weight="1"
-                    android:layout_marginStart="12dp"
                     android:orientation="vertical">
 
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Imaging Reports"
                         android:textColor="#102A43"
                         android:textSize="16sp"
-                        android:textStyle="bold"/>
+                        android:textStyle="bold" />
 
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="X-Ray, CT Scan, MRI and more"
                         android:textColor="#627D98"
-                        android:textSize="13sp"/>
+                        android:textSize="13sp" />
                 </LinearLayout>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:paddingStart="8dp"
                     android:text="›"
                     android:textColor="#087F5B"
-                    android:textSize="28sp"/>
-
+                    android:textSize="28sp" />
             </LinearLayout>
-
 
             <!-- Health Summary -->
             <LinearLayout
                 android:id="@+id/healthSummary"
                 android:layout_width="match_parent"
-                android:layout_height="70dp"
+                android:layout_height="wrap_content"
+                android:minHeight="70dp"
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
-                android:padding="12dp">
+                android:padding="10dp">
 
                 <TextView
-                    android:layout_width="48dp"
+                    android:layout_width="40dp"
                     android:layout_height="48dp"
                     android:gravity="center"
                     android:text="❤️"
-                    android:textSize="24sp"/>
+                    android:textSize="24sp" />
 
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
                     android:layout_weight="1"
-                    android:layout_marginStart="12dp"
                     android:orientation="vertical">
 
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Health Summary"
                         android:textColor="#102A43"
                         android:textSize="16sp"
-                        android:textStyle="bold"/>
+                        android:textStyle="bold" />
 
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Your overall health information"
                         android:textColor="#627D98"
-                        android:textSize="13sp"/>
+                        android:textSize="13sp" />
                 </LinearLayout>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:paddingStart="8dp"
                     android:text="›"
                     android:textColor="#087F5B"
-                    android:textSize="28sp"/>
-
+                    android:textSize="28sp" />
             </LinearLayout>
 
         </LinearLayout>
-
     </androidx.cardview.widget.CardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
