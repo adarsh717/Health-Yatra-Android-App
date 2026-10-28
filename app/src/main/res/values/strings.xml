@@ -28,4 +28,6 @@
     <string name="verify">Verify</string>
     <string name="otp">OTP</string>
     <string name="validate">Validate</string>
+    <string name="search_reports">Search reports...</string>
+    <string name="all_reports_are_linked_with_your_aadhaar">All reports are linked with your Aadhaar</string>
 </resources>

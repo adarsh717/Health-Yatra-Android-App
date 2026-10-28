@@ -6,7 +6,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import com.example.health_yatra.R
 import androidx.recyclerview.widget.RecyclerView
-import com.example.health_yatra.LabReport
+import com.example.health_yatra.model.LabReport
 class LabReportAdapter(
     private val reports: List<LabReport>
 ): RecyclerView.Adapter<LabReportAdapter.LabReportsViewHolder>() {

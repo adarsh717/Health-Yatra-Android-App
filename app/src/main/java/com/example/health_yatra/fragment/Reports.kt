@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.health_yatra.LabReport
+import com.example.health_yatra.model.LabReport
 import com.example.health_yatra.R
 import com.example.health_yatra.adapter.LabReportAdapter
 

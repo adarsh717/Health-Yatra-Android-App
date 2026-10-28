@@ -16,7 +16,7 @@
         android:id="@+id/topBar"
         android:layout_width="0dp"
         android:layout_height="80dp"
-android:layout_marginTop="35dp"
+        android:layout_marginTop="35dp"
         android:background="@drawable/gradient_background"
 
         app:layout_constraintEnd_toEndOf="parent"

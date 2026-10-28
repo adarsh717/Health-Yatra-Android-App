@@ -1,4 +1,4 @@
-package com.example.health_yatra
+package com.example.health_yatra.model
 
 data class LabReport(
     val name: String,
