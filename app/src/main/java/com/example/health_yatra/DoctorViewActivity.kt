@@ -7,6 +7,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.WindowInsetsControllerCompat
+import com.example.health_yatra.fragment.DoctorDashboard
 import com.example.health_yatra.fragment.Login
 import com.example.health_yatra.fragment.SignUp
 
@@ -23,29 +24,30 @@ class DoctorViewActivity : AppCompatActivity() {
         setContentView(R.layout.activity_doctor_view)
 
 
-//        if (savedInstanceState == null) {
-//
-//            supportFragmentManager.beginTransaction()
-//                .replace(
-//                    R.id.authFragmentContainer,
-////
-//                )
-//                .commit()
-//        }
-
-        supportFragmentManager.addOnBackStackChangedListener {
-
-            val currentFragment =
-                supportFragmentManager.findFragmentById(
-                    R.id.authFragmentContainer
+        if (savedInstanceState == null) {
+            supportFragmentManager.beginTransaction()
+                .replace(
+                    R.id.authFragmentContainer,
+                    DoctorDashboard()
                 )
+                .commit()
+        }
 
-            supportActionBar?.title = when (currentFragment) {
-                is SignUp -> "Sign Up"
-                is Login -> "Login"
+            supportFragmentManager.addOnBackStackChangedListener {
 
-                else -> {"Welcome !"}
+                val currentFragment =
+                    supportFragmentManager.findFragmentById(
+                        R.id.authFragmentContainer
+                    )
+
+                supportActionBar?.title = when (currentFragment) {
+                    is SignUp -> "Sign Up"
+                    is Login -> "Login"
+
+                    else -> {
+                        "Welcome !"
+                    }
+                }
             }
         }
     }
-}

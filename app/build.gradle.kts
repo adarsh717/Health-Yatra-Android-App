@@ -16,7 +16,6 @@ android {
         targetSdk = 37
         versionCode = 1
         versionName = "1.0"
-
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -38,8 +37,13 @@ dependencies {
     implementation(libs.androidx.appcompat)
     implementation(libs.androidx.constraintlayout)
     implementation(libs.androidx.core.ktx)
+    implementation(libs.androidx.ui.test)
     implementation(libs.material)
     testImplementation(libs.junit)
+
+    implementation("com.squareup.retrofit2:retrofit:3.0.0")
+    implementation("com.squareup.retrofit2:converter-gson:3.0.0")
+
     androidTestImplementation(libs.androidx.espresso.core)
     androidTestImplementation(libs.androidx.junit)
 }

@@ -200,7 +200,6 @@
                     android:layout_width="42dp"
                     android:layout_height="38dp"
                     android:gravity="center"
-                    android:text="♟"
                     android:textColor="#1675F5"
                     android:textSize="26sp" />
 
