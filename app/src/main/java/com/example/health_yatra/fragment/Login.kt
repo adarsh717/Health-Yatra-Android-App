@@ -41,14 +41,9 @@ class Login : Fragment() {
 
     private fun setupLogin(view: View) {
 
-        val username =
-            view.findViewById<EditText>(R.id.LoginUsername)
-
-        val password =
-            view.findViewById<EditText>(R.id.LoginPassword)
-
-        val loginBtn =
-            view.findViewById<MaterialButton>(R.id.LoginBtn)
+        val username = view.findViewById<EditText>(R.id.LoginUsername)
+        val password = view.findViewById<EditText>(R.id.LoginPassword)
+        val loginBtn = view.findViewById<MaterialButton>(R.id.LoginBtn)
 
         loginBtn.setOnClickListener {
 
@@ -85,7 +80,6 @@ class Login : Fragment() {
 
                             requireContext()
                                 .getSharedPreferences("HealthYatraPrefs", Context.MODE_PRIVATE)
-
                                 .edit {
                                          putString("jwt_token", loginResponse.token)
                                         .putString("username", loginResponse.username)
