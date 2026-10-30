@@ -19,8 +19,7 @@
         android:background="@drawable/bg_edittext"
         android:hint="@string/enter_username"
         android:autofillHints="username"
-
-        android:textColorHint="#FB959595"
+        android:textColorHint="#FB958C8C"
         android:layout_marginTop="18dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

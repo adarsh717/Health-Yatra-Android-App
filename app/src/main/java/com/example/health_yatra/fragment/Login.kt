@@ -1,6 +1,6 @@
 package com.example.health_yatra.fragment
 
-import android.content.Context
+
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -14,7 +14,7 @@ import com.example.health_yatra.data.model.LoginRequest
 import com.example.health_yatra.data.remote.RetrofitClient
 import com.google.android.material.button.MaterialButton
 import kotlinx.coroutines.launch
-import androidx.core.content.edit
+import com.example.health_yatra.data.local.SessionManager
 
 class Login : Fragment() {
 
@@ -78,18 +78,30 @@ class Login : Fragment() {
 
                         if (loginResponse != null) {
 
-                            requireContext()
-                                .getSharedPreferences("HealthYatraPrefs", Context.MODE_PRIVATE)
-                                .edit {
-                                         putString("jwt_token", loginResponse.token)
-                                        .putString("username", loginResponse.username)
-                                }
+//                            requireContext()
+//                                .getSharedPreferences("HealthYatraPrefs", Context.MODE_PRIVATE)
+//                                .edit {
+//                                         putString("jwt_token", loginResponse.token)
+//                                        .putString("username", loginResponse.username)
+//                                }
+                            val sessionManager = SessionManager(requireContext())
+
+                            sessionManager.saveToken(
+                                loginResponse.token,
+                                loginResponse.username
+                            )
 
                             Toast.makeText(
                                 requireContext(),
                                 "Login successful",
                                 Toast.LENGTH_SHORT
                             ).show()
+
+                            parentFragmentManager.beginTransaction()
+                                .replace(
+                                    R.id.authFragmentContainer,
+                                    PatientDashBoard()
+                                ).commit()
                         }
 
                     } else {

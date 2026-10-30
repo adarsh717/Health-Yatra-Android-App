@@ -162,6 +162,8 @@ class SignUp : Fragment() {
                             Toast.LENGTH_LONG
                         ).show()
 
+
+
                     } else {
 
                         Toast.makeText(
@@ -190,12 +192,16 @@ class SignUp : Fragment() {
     // Login Navigation
     private fun setupLoginNavigation(view: View) {
 
-        val tvLogin =
-            view.findViewById<TextView>(R.id.tvLogin)
+        val tvLogin = view.findViewById<TextView>(R.id.tvLogin)
 
         tvLogin.setOnClickListener {
 
-            parentFragmentManager.popBackStack()
+            parentFragmentManager.beginTransaction()
+                
+                .replace(
+                    R.id.authFragmentContainer,
+                    Login()
+                ).addToBackStack("SignUp").commit()
 
             (requireActivity() as? AppCompatActivity)
                 ?.supportActionBar?.title = "Login"
