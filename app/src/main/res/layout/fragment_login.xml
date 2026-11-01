@@ -12,7 +12,7 @@
     <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/LoginUsername"
         android:layout_width="0dp"
-        android:layout_height="50dp"
+        android:layout_height="55dp"
         android:layout_marginStart="15dp"
         android:layout_marginEnd="15dp"
         android:layout_marginTop="18dp"
@@ -28,13 +28,15 @@
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/passwordLayout"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="55dp"
         android:layout_marginStart="15dp"
         android:layout_marginEnd="15dp"
         android:layout_marginTop="18dp"
+        android:hint="@string/enter_password"
         app:boxBackgroundMode="none"
         app:endIconMode="password_toggle"
         app:endIconTint="#000000"
+        app:hintEnabled="false"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/LoginUsername">
@@ -42,11 +44,13 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/LoginPassword"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="55dp"
             android:background="@drawable/bg_edittext"
             android:hint="@string/enter_password"
             android:inputType="textPassword"
-            android:textColorHint="#FB959595" />
+            android:paddingStart="12dp"
+            android:paddingEnd="48dp"
+            android:textColorHint="#FB958C8C" />
 
     </com.google.android.material.textfield.TextInputLayout>
 

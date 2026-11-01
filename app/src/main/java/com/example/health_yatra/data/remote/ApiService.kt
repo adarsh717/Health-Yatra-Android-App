@@ -4,6 +4,7 @@ import com.example.health_yatra.data.model.CheckUserRequest
 import com.example.health_yatra.data.model.LoginRequest
 import com.example.health_yatra.data.model.LoginResponse
 import com.example.health_yatra.data.model.RegisterRequest
+import com.example.health_yatra.model.HealthRecord
 import com.example.health_yatra.model.VerifyEmailRequest
 import com.example.health_yatra.model.PatientProfile
 import okhttp3.ResponseBody
@@ -46,4 +47,10 @@ interface ApiService {
     suspend fun verifyEmail(
         @Body request: VerifyEmailRequest
     ): Response<ResponseBody>
+
+    @GET("record/fetch-health/{aadhar}")
+    suspend fun fetchHealthRecords(
+        @Header("Authorization") token: String,
+        @Path("aadhar") aadhar: String
+    ): Response<List<HealthRecord>>
 }

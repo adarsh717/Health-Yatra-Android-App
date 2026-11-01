@@ -37,13 +37,12 @@ dependencies {
     implementation(libs.androidx.appcompat)
     implementation(libs.androidx.constraintlayout)
     implementation(libs.androidx.core.ktx)
-    implementation(libs.androidx.ui.test)
     implementation(libs.material)
     testImplementation(libs.junit)
-
     implementation("com.squareup.retrofit2:retrofit:3.0.0")
     implementation("com.squareup.retrofit2:converter-gson:3.0.0")
-
+    implementation("com.google.code.gson:gson:2.13.2")
+    implementation("androidx.cardview:cardview:1.0.0")
     androidTestImplementation(libs.androidx.espresso.core)
     androidTestImplementation(libs.androidx.junit)
 }
