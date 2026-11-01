@@ -1,9 +1,12 @@
 package com.example.health_yatra.data.remote
 
+import com.example.health_yatra.data.model.CheckUserRequest
 import com.example.health_yatra.data.model.LoginRequest
 import com.example.health_yatra.data.model.LoginResponse
 import com.example.health_yatra.data.model.RegisterRequest
+import com.example.health_yatra.model.VerifyEmailRequest
 import com.example.health_yatra.model.PatientProfile
+import okhttp3.ResponseBody
 import retrofit2.Response
 import retrofit2.http.Body
 import retrofit2.http.GET
@@ -34,4 +37,13 @@ interface ApiService {
         @Path("aadhar") aadhar: String
     ): Response<PatientProfile>
 
+    @POST("authorize/check-user")
+    suspend fun checkUser(
+        @Body request: CheckUserRequest
+    ): Response<Boolean>
+
+    @POST("authorize/verifyemail")
+    suspend fun verifyEmail(
+        @Body request: VerifyEmailRequest
+    ): Response<ResponseBody>
 }

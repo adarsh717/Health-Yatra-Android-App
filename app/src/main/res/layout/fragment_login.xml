@@ -8,38 +8,47 @@
     android:background="@color/primary"
     tools:context=".fragment.Login">
 
-
-<!--    username inputField-->
+    <!-- Username inputField -->
     <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/LoginUsername"
         android:layout_width="0dp"
         android:layout_height="50dp"
         android:layout_marginStart="15dp"
         android:layout_marginEnd="15dp"
+        android:layout_marginTop="18dp"
         android:background="@drawable/bg_edittext"
         android:hint="@string/enter_username"
         android:autofillHints="username"
         android:textColorHint="#FB958C8C"
-        android:layout_marginTop="18dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-<!--    Password InputField-->
-    <androidx.appcompat.widget.AppCompatEditText
-        android:id="@+id/LoginPassword"
+    <!-- Password InputField -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/passwordLayout"
         android:layout_width="0dp"
-        android:layout_height="50dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="15dp"
         android:layout_marginEnd="15dp"
-        android:background="@drawable/bg_edittext"
-        android:hint="@string/enter_password"
-        android:inputType="textPassword"
-        android:textColorHint="#FB959595"
         android:layout_marginTop="18dp"
+        app:boxBackgroundMode="none"
+        app:endIconMode="password_toggle"
+        app:endIconTint="#000000"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/LoginUsername"/>
+        app:layout_constraintTop_toBottomOf="@id/LoginUsername">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/LoginPassword"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/bg_edittext"
+            android:hint="@string/enter_password"
+            android:inputType="textPassword"
+            android:textColorHint="#FB959595" />
+
+    </com.google.android.material.textfield.TextInputLayout>
 
     <RadioButton
         android:id="@+id/rememberBtn"
@@ -47,22 +56,21 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="@string/remember_me"
+        android:textColor="@color/text_primary"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@+id/LoginPassword"
-        app:layout_constraintTop_toBottomOf="@+id/LoginPassword" />
-
+        app:layout_constraintStart_toStartOf="@+id/passwordLayout"
+        app:layout_constraintTop_toBottomOf="@+id/passwordLayout" />
 
     <TextView
         android:id="@+id/forgetPass"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-
         android:layout_marginStart="50dp"
         android:text="@string/forget_password"
         android:textColor="#000000"
         android:textStyle="bold"
         app:layout_constraintBaseline_toBaselineOf="@+id/rememberBtn"
-        app:layout_constraintEnd_toEndOf="@+id/LoginPassword"
+        app:layout_constraintEnd_toEndOf="@+id/passwordLayout"
         app:layout_constraintHorizontal_bias="0.979"
         app:layout_constraintStart_toEndOf="@+id/rememberBtn" />
 
@@ -70,7 +78,6 @@
         android:id="@+id/LoginBtn"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
-
         android:backgroundTint="#318E5A"
         android:text="@string/login"
         android:textSize="16sp"
@@ -82,8 +89,8 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
         android:layout_marginTop="18dp"
+        android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/LoginBtn">
@@ -99,14 +106,13 @@
             android:id="@+id/tvRegister"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:clickable="true"
             android:layout_marginStart="4dp"
+            android:clickable="true"
             android:text="@string/register"
             android:textColor="@color/text_primary"
             android:textSize="18sp"
             android:textStyle="bold" />
 
     </LinearLayout>
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

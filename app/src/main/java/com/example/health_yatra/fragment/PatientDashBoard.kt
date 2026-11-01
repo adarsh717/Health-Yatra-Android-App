@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
@@ -31,12 +32,29 @@ class PatientDashBoard : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val labReports = view.findViewById<View>(R.id.labReports)
+        val logoutBtn = view.findViewById<Button>(R.id.LogOutBtn)
+
 
         labReports.setOnClickListener {
             parentFragmentManager.beginTransaction()
                 .replace(
                     R.id.authFragmentContainer,
                     LabReportsFragment()
+                )
+                .addToBackStack(null)
+                .commit()
+        }
+
+        logoutBtn.setOnClickListener {
+
+            val sessionManager = SessionManager(requireContext())
+
+            sessionManager.clearSession()
+
+            parentFragmentManager.beginTransaction()
+                .replace(
+                    R.id.authFragmentContainer,
+                    Login()
                 )
                 .addToBackStack(null)
                 .commit()
