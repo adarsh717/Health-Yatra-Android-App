@@ -1,7 +1,8 @@
 package com.example.health_yatra
 
+import android.content.Intent
 import android.os.Bundle
-import android.view.View
+import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.WindowCompat
@@ -50,57 +51,116 @@ class Home : AppCompatActivity() {
         }
     }
 
-    private fun checkUserSession() {
+    // Check session and navigate according to backend role
+    fun checkUserSession() {
 
         val savedToken = sessionManager.getToken()
 
-        // No saved token: open Login
         if (savedToken.isNullOrBlank()) {
             openLogin()
             return
         }
 
-        // validate with backend
         lifecycleScope.launch {
 
             try {
+                // STEP 1: Get logged-in user's Aadhaar using token
+                val response = RetrofitClient.apiService
+                    .getLoggedInUser("Bearer $savedToken")
 
-                val response = RetrofitClient.apiService.getLoggedInUser(
-                        "Bearer $savedToken"
-                    )
-                if (response.isSuccessful && !response.body().isNullOrBlank()
-                ) {
-                    // Token is valid
-                    openPatientDashboard()
-                } else if (
-                    response.code() == 401 ||
-                    response.code() == 403
-                ) {
-                    // Token is invalid or expired
+                if (response.code() == 401 || response.code() == 403) {
                     sessionManager.clearSession()
                     openLogin()
-                } else {
+                    return@launch
+                }
 
-                    // Other server error
-                    Toast.makeText(
-                        this@Home,
-                        "Unable to verify session: HTTP ${response.code()}",
-                        Toast.LENGTH_LONG
-                    ).show()
+                if (!response.isSuccessful) {
+                    Log.e(
+                        "ROLE_CHECK",
+                        "LoggedIn API failed: ${response.code()}"
+                    )
+                    showMessage("Unable to verify login session")
+                    return@launch
+                }
+
+                val aadhaar = response.body()?.trim()
+
+                if (aadhaar.isNullOrBlank()) {
+                    Log.e("ROLE_CHECK", "Aadhaar is empty")
+                    showMessage("Aadhaar not received from server")
+                    return@launch
+                }
+
+                Log.d("ROLE_CHECK", "Aadhaar received successfully")
+
+                // STEP 2: Fetch registration details using Aadhaar
+                val roleResponse = RetrofitClient.apiService
+                    .getUserRole(aadhaar)
+
+                if (!roleResponse.isSuccessful) {
+                    Log.e(
+                        "ROLE_CHECK",
+                        "Role API failed: ${roleResponse.code()} - " +
+                                "${roleResponse.errorBody()?.string()}"
+                    )
+                    showMessage("Unable to fetch user role")
+                    return@launch
+                }
+
+                // STEP 3: Extract role from response
+                val user = roleResponse.body()
+
+                if (user == null) {
+                    Log.e("ROLE_CHECK", "User response is null")
+                    showMessage("User details not received")
+                    return@launch
+                }
+
+                val role = user.role.trim().uppercase()
+
+                Log.d("ROLE_CHECK", "Backend role received: $role")
+
+                // STEP 4: Navigate according to role
+                when (role) {
+
+                    "DOCTOR" -> {
+                        openDoctorDashboard()
+                    }
+
+                    "USER", "PATIENT" -> {
+                        openPatientDashboard()
+                    }
+
+                    "ADMIN" -> {
+                        showMessage("Admin dashboard not implemented")
+                    }
+
+                    else -> {
+                        Log.e("ROLE_CHECK", "Unknown role: $role")
+                        showMessage("Unknown user role: $role")
+                    }
                 }
 
             } catch (e: Exception) {
 
-                // Network/server connection problem
-                Toast.makeText(
-                    this@Home,
-                    "Connection error: ${e.localizedMessage}",
-                    Toast.LENGTH_LONG
-                ).show()
+                Log.e("ROLE_CHECK", "Role checking failed", e)
+
+                showMessage(
+                    "Connection error: ${e.localizedMessage}"
+                )
             }
         }
     }
 
+    private fun showMessage(message: String) {
+        Toast.makeText(
+            this,
+            message,
+            Toast.LENGTH_LONG
+        ).show()
+    }
+
+    // Open Login Fragment
     private fun openLogin() {
 
         supportActionBar?.title = "Login"
@@ -113,8 +173,11 @@ class Home : AppCompatActivity() {
             .commit()
     }
 
+    // Open Patient Dashboard Fragment
     private fun openPatientDashboard() {
+
         supportActionBar?.title = "Patient Dashboard"
+
         supportFragmentManager.beginTransaction()
             .replace(
                 R.id.authFragmentContainer,
@@ -123,5 +186,14 @@ class Home : AppCompatActivity() {
             .commit()
     }
 
+    // Open Doctor Dashboard Activity
+    private fun openDoctorDashboard() {
 
+        val intent = Intent(
+            this,
+            DoctorViewActivity::class.java
+        )
+        startActivity(intent)
+        finish()
+    }
 }

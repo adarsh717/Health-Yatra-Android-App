@@ -173,30 +173,14 @@ class SignUp : Fragment() {
 
     // Registration API
     private fun setupRegister(view: View) {
-
-        val email =
-            view.findViewById<AppCompatEditText>(R.id.email)
-
-        val username =
-            view.findViewById<AppCompatEditText>(R.id.username)
-
-        val phone =
-            view.findViewById<AppCompatEditText>(R.id.phoneNumber)
-
-        val aadhaar =
-            view.findViewById<AppCompatEditText>(R.id.Aadhaar)
-
-        val password =
-            view.findViewById<AppCompatEditText>(R.id.password)
-
-        val patientCheckBox =
-            view.findViewById<MaterialCheckBox>(R.id.patientCheckBox)
-
-        val doctorCheckBox =
-            view.findViewById<MaterialCheckBox>(R.id.doctorCheckBox)
-
-        val registerBtn =
-            view.findViewById<MaterialButton>(R.id.registerBtn)
+        val email = view.findViewById<AppCompatEditText>(R.id.email)
+        val username = view.findViewById<AppCompatEditText>(R.id.username)
+        val phone = view.findViewById<AppCompatEditText>(R.id.phoneNumber)
+        val aadhaar = view.findViewById<AppCompatEditText>(R.id.Aadhaar)
+        val password = view.findViewById<AppCompatEditText>(R.id.password)
+        val patientCheckBox = view.findViewById<MaterialCheckBox>(R.id.patientCheckBox)
+        val doctorCheckBox = view.findViewById<MaterialCheckBox>(R.id.doctorCheckBox)
+        val registerBtn = view.findViewById<MaterialButton>(R.id.registerBtn)
 
         registerBtn.setOnClickListener {
 

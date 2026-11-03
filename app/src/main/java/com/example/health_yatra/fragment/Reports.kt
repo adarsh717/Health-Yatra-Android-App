@@ -24,7 +24,6 @@ class LabReportsFragment : Fragment() {
     private lateinit var tvEmptyReports: TextView
 
     private val repository = HealthRecordRepository()
-    private var isDataLoaded = false
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -43,14 +42,9 @@ class LabReportsFragment : Fragment() {
         tvEmptyReports = view.findViewById(R.id.tvEmptyReports)
 
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
-
-
             fetchHealthRecords()
-
-
         return view
     }
-
     private fun fetchHealthRecords() {
 
         val sessionManager = SessionManager(requireContext())
@@ -74,12 +68,10 @@ class LabReportsFragment : Fragment() {
         viewLifecycleOwner.lifecycleScope.launch {
 
             try {
-
                 val response = repository.fetchHealthRecords(
                     token = token,
                     aadhar = aadhar
                 )
-
                 if (!isAdded) return@launch
 
                 progressBar.visibility = View.GONE

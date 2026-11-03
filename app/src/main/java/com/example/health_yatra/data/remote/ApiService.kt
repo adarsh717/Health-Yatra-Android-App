@@ -3,7 +3,9 @@ package com.example.health_yatra.data.remote
 import com.example.health_yatra.data.model.CheckUserRequest
 import com.example.health_yatra.data.model.LoginRequest
 import com.example.health_yatra.data.model.LoginResponse
+import com.example.health_yatra.data.model.MigrantResponse
 import com.example.health_yatra.data.model.RegisterRequest
+import com.example.health_yatra.data.model.UserResponse
 import com.example.health_yatra.model.HealthRecord
 import com.example.health_yatra.model.VerifyEmailRequest
 import com.example.health_yatra.model.PatientProfile
@@ -26,12 +28,6 @@ interface ApiService {
    suspend fun register(
        @Body request: RegisterRequest
    ): Response<String>
-
-    @GET("authorize/loggedIn")
-    suspend fun getLoggedInUser(
-        @Header("Authorization") token: String
-    ): Response<String>
-
     @GET("migrant/mig/{aadhar}")
     suspend fun getPatientProfile(
         @Header("Authorization") token: String,
@@ -53,4 +49,20 @@ interface ApiService {
         @Header("Authorization") token: String,
         @Path("aadhar") aadhar: String
     ): Response<List<HealthRecord>>
+
+    @GET("migrant/mig/{aadhar}")
+    suspend fun searchPatientByAadhar(
+        @Header("Authorization") token: String,
+        @Path("aadhar") aadhar: String
+    ): Response<MigrantResponse>
+
+    @GET("authorize/loggedIn")
+    suspend fun getLoggedInUser(
+        @Header("Authorization") token: String
+    ): Response<String>
+
+    @GET("authorize/getReg-data/{aadhar}")
+    suspend fun getUserRole(
+        @Path("aadhar") aadhar: String
+    ): Response<UserResponse>
 }

@@ -21,7 +21,6 @@ class MedicalRecordDetailsFragment : Fragment() {
             val bundle = Bundle().apply {
                 putString(ARG_RECORD, Gson().toJson(record))
             }
-
             fragment.arguments = bundle
             return fragment
         }
@@ -48,10 +47,8 @@ class MedicalRecordDetailsFragment : Fragment() {
         if (record != null) {
             showRecordDetails(view, record)
         }
-
         return view
     }
-
     private fun showRecordDetails(
         view: View,
         record: HealthRecord

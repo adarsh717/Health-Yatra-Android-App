@@ -31,4 +31,13 @@
     <string name="search_reports">Search reports...</string>
     <string name="all_reports_are_linked_with_your_aadhaar">All reports are linked with your Aadhaar</string>
     <string name="logout">LogOut</string>
+    <string name="patient_age">Age: %1$d</string>
+    <string name="patient_gender">Gender: %1$s</string>
+    <string name="patient_blood_group">Blood Group: %1$s</string>
+    <string name="patient_occupation">Occupation: %1$s</string>
+    <string name="patient_aadhaar">Aadhaar: %1$s</string>
+
+    <string name="patient_details">
+    %1$s\n%2$s\n%3$s\n%4$s\n%5$s
+</string>
 </resources>
